@@ -1,20 +1,27 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang="pug">
+  #app
+    header.header
+      header-menu
+      search
+    aside.sidebar
+    .workspace
+
+
 </template>
 <style lang="stylus">
-#app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
 
-#nav
-  padding 30px
+#app
+  width 100%
+  height 100vh
+  display grid 
+  grid-template-columns: 150px 1fr
+  grid-template-rows: 150px 1fr
+  grid-template-areas: 'header header' 'aside workspace';
+
+.header
+  grid-area: header 
+.sidebar
+  grid-area: aside
+.workspace
+  grid-area: workspace       
 </style>
